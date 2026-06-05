@@ -11,11 +11,22 @@ function App(){
         const data = await response.json();
         setStudents(data);
     };
+
+    const getbcaStudents = async () => {
+        const response = await fetch('http://localhost:8080/students/bca');
+        const data = await response.json();
+        setStudents(data);
+    };
+
     return (
         <div>
 
             <button onClick={getStudents}>
                 Get Students
+            </button>
+
+            <button onClick={getbcaStudents}>
+                Get BCA Students
             </button>
 
             <ul>
